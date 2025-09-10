@@ -1,5 +1,4 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
 int main() {
@@ -9,7 +8,7 @@ int main() {
 
     cout << "Enter string:" << endl;
     cin >> input;
-    cout << "Enter pattern:" << endl;
+    // cout << "Not taking pattern as input to test case" << endl;
     cin >> pattern;
 
     if (pattern.empty()) {
@@ -17,12 +16,9 @@ int main() {
         return 0;
     }
 
-    if (indices.empty()) {
-        cout << "Pattern not found" << endl;
-        return 0;
-    }
 
-    cout << "Pattern found at indices: " << endl;
+
+
     for (int i = 0; i < input.size(); i++) {
         if (input.substr(i, pattern.size()) == pattern) {
             for (int j = 0; j < pattern.size(); j++) {
@@ -32,7 +28,12 @@ int main() {
         }
     }
 
-    cout << indices << endl;
+    if (indices.empty()) {
+        cout << "Pattern not found" << endl;
+        return 0;
+    }
+
+    cout << "Pattern found at indices: \n" << indices << endl;
 
 
 
